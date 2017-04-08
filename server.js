@@ -14,7 +14,7 @@ var session = require('express-session');
 var configDB = require('./config/database.js');
 
 mangoose.connect(configDB.url);
-
+require('./config/passport')(passport);
 app.use(morgan('dev'));
 
 app.use(cookieparser());
